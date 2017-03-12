@@ -1,0 +1,5 @@
+bin
+build.properties
+examples/*/data/*.mov
+library/glvideo.jar
+reference
