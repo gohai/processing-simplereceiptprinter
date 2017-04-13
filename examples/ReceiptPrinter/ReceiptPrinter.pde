@@ -17,8 +17,11 @@ SimpleReceiptPrinter printer;
 
 void setup() {
   String[] ports = SimpleReceiptPrinter.list();
-  //printArray(ports);
-  printer = new SimpleReceiptPrinter(this, ports[0]);
+  println("Available serial ports:");
+  printArray(ports);
+  String port = ports[0];
+  println("Attempting to use " + port);
+  printer = new SimpleReceiptPrinter(this, port);
 
   /*
    * If you're having problems, try holding the feed button while
