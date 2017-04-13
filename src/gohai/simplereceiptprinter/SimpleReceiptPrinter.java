@@ -1,11 +1,11 @@
 /* -*- mode: java; c-basic-offset: 2; indent-tabs-mode: nil -*- */
 
 /*
-  Copyright (c) Limor Fried/Ladyada for Adafruit Industries, with
-  contributions from the open source community. Originally based on
-  Thermal library from bildr.org. License: MIT.
-  Ported to Processing by Gottfried Haider 2017.
-*/
+ * Copyright (c) Limor Fried/Ladyada for Adafruit Industries, with
+ * contributions from the open source community. Originally based on
+ * Thermal library from bildr.org. License: MIT.
+ * Ported to Processing by Gottfried Haider 2017.
+ */
 
 package gohai.simplereceiptprinter;
 
