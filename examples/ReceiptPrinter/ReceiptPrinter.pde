@@ -2,13 +2,13 @@
  * This example shows how to use a Thermal Receipt Printer with Processing
  * The part used is #597 from Adafruit (labeled "Model BT-2")
  *
- * Only attach the yellow wire to the TX pin of your Single Board Computer
- * and the black wire to a GND pin. Don't connect the green wire to the RX
- * pin, since this is not used any might damage your SBC due to the higher
+ * Only attach the yellow wire to the TXD pin of your Single Board Computer
+ * and the black wire to a GND pin. Don't connect the green wire to the RXD
+ * pin, since this is not used and might damage your SBC due to the higher
  * voltage used by the printer.
  *
  * The printer draws a considerable amount of power, so make sure to power
- * it from an external 5V ~ 2A power supply.
+ * it from an external 5-9V ~ 1.5A power supply.
  */
 
 import gohai.simplereceiptprinter.*;
@@ -19,6 +19,7 @@ void setup() {
   String[] ports = SimpleReceiptPrinter.list();
   println("Available serial ports:");
   printArray(ports);
+  // you might need to use a different port
   String port = ports[0];
   println("Attempting to use " + port);
   printer = new SimpleReceiptPrinter(this, port);
@@ -29,7 +30,7 @@ void setup() {
    * that includes the expected baud rate as well as the firmware
    * number. If the values differ from the default 19200 baud and
    * version 2.68 you can pass them to the constructor like this:
-   * printer = new SimpleReceiptPrinter(this, ports[0], 2.68, 19200);
+   * printer = new SimpleReceiptPrinter(this, port, 2.68, 19200);
    */
 
   printer.println("Hello");
@@ -46,7 +47,4 @@ void setup() {
   line(0, 100, 100, 0);
   printer.printBitmap(get());
   printer.feed(3);
-}
-
-void draw() {
 }
